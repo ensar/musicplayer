@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+$darkColor:#424665;
+$purple:#6F2DFF;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(to right, #83a4d4, #b6fbff);
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    width:350px;
+    height:550px;
+    background:#202128;
+    margin: 40px auto 0 auto;
+    border-radius: 2rem;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    header{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: flex-end;
+        .down{
+            width:100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 60px;
+            svg{
+                color:$darkColor;
+                width: 30px;
+                height: 30px;
+            }
+            p{
+                color: #fff;
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+        .like{
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background-color: #313542;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            svg{
+                color:#fff;
+                width: 20px;
+                height: 20px;
+            }
+            &.active svg{
+                fill:red;
+            }
+        }
+    }
+    .photo{
+        margin-top: 20px;
+        img{
+            width: 250px;
+            height: 250px;
+            user-select: none;
+        }
+    }
+    .song-info{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2{
+            color:#fff;
+            text-align: center;
+        }
+        p{
+            color:$darkColor;
+            margin-top: 10px;
+        }
+    }
+    .audio{
+        width: 100%;
+        padding: 0 40px;
+        margin-top: 10px;
+ 
+            .progressBar{
+                flex: 1;
+                height: 8px;
+                border-radius: 4px;
+                background-color: $darkColor;
+                position: relative;
+                cursor: pointer;
+                .current{
+                    position: absolute;
+                    border-radius: 4px;
+                    height: 100%;
+                    background-color: $purple;
+                }
+            }
+            .time{
+                display: flex;
+                justify-content: space-between;
+                p{
+                    color:$darkColor;
+                    font-size: 12px;
+                    margin-top: 10px;
+                }
+                .songDuration{
+                    justify-content: flex-end;
+                }
+            
+            }
+            .navigations{
+                display: flex;
+                justify-content: space-between;
+                button{
+                    background-color: transparent;
+                    border:none;
+                    outline: none;
+                    svg{
+                        width:25px;
+                        color:$darkColor;
+                        cursor: pointer;
+                        transition: 400ms;
+                        &:hover{
+                            color:#ddd;
+                        }
+                    }
+                }
+                .play{
+                    background-color: $purple;
+                    width: 50px;
+                    height: 45px;
+                    border-radius: 12px;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    box-shadow: 2px 2px 6px $purple;
+                    #pause{
+                        display: none;
+                    }
+                    &.active {
+                        #play{
+                            display: none;
+                        }
+                        #pause{
+                            display: block;
+                        }
+                    }
+                    svg{
+                        color:#fff;
+                        width: 30px;
+                    }
+                }
+            }
+    }
+}
